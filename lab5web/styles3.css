@@ -1,0 +1,73 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.pricing-container {
+    width: 75%;
+    margin: 50px auto;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Відступи між картками */
+}
+
+.pricing-card {
+    width: 27%;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding-bottom: 20px;
+    border: 3px solid transparent; /* Кольорові контури */
+}
+
+.green { border-color: #008c74; }
+.orange { border-color: #f39c12; }
+.red { border-color: #c0392b; }
+
+.header {
+    font-size: 22px;
+    font-weight: bold;
+    padding: 15px;
+    color: white;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.green .header { background-color: #008c74; }
+.orange .header { background-color: #f39c12; }
+.red .header { background-color: #c0392b; }
+
+.header .title {
+    display: block; /* Встановлюємо назву тарифу в окремий рядок */
+    font-size: 18px;
+    margin-top: 5px;
+    font-weight: normal;
+}
+
+.content {
+    padding: 15px;
+    border-bottom: 2px dashed #ccc;
+}
+
+.content p {
+    margin: 10px 0;
+}
+
+.signup {
+    width: 80%;
+    padding: 10px;
+    margin-top: 15px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.green-btn { background-color: #008c74; color: white; }
+.orange-btn { background-color: #f39c12; color: white; }
+.red-btn { background-color: #c0392b; color: white; }
