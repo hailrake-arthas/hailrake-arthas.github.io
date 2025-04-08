@@ -1,0 +1,71 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  /* Видалили центрування через table та text-align */
+  width: 100%;
+  text-align: left;
+}
+
+.fullwrap {
+  width: 900px; /* 🟩 Збільшено ширину */
+  text-align: left;
+  border: 1px solid #000;
+  box-sizing: border-box;
+
+  margin-left: 20px; /* 🟦 Вирівнювання від краю (не впритул) */
+}
+
+/* Header */
+.header {
+  height: 80px;
+  border: 1px solid #000;
+  margin: 10px;
+  box-sizing: border-box;
+}
+
+/* Контейнер wrap */
+.wrap {
+  margin: 10px;
+  border: 1px solid #000;
+  box-sizing: border-box;
+  padding: 10px;
+  background-color: white;
+}
+
+/* clearfix для wrap */
+.wrap::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Main */
+.main {
+  float: left;
+  width: 60%;
+  height: 300px;
+  border: 1px solid #000;
+  box-sizing: border-box;
+  margin-right: 10px;
+}
+
+/* Sidebar */
+.sidebar {
+  float: left;
+  width: 38%;
+  height: 300px;
+  border: 1px solid #000;
+  box-sizing: border-box;
+}
+
+/* Footer */
+.footer {
+  height: 100px;
+  border: 1px solid #000;
+  margin: 10px;
+  box-sizing: border-box;
+}

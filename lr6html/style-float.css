@@ -1,0 +1,48 @@
+.calculator-float {
+    width: 220px;
+    border: 2px solid teal;
+    border-radius: 10px;
+    padding: 10px;
+    float: left;
+  }
+  
+  .calculator-float .header {
+    background: teal;
+    color: white;
+    text-align: right;
+    padding: 5px;
+    font-weight: bold;
+  }
+  
+  .calculator-float .screen {
+    border: 2px solid teal;
+    margin: 10px 0;
+    padding: 10px;
+    text-align: right;
+    font-size: 18px;
+  }
+  
+  .calculator-float .sub-screen {
+    background: teal;
+    width: 80px;
+    height: 30px;
+    float: right;
+    margin-bottom: 10px;
+  }
+  
+  .calculator-float .buttons {
+    clear: both;
+  }
+  
+  .calculator-float .btn {
+    width: 40px;
+    height: 40px;
+    border: 2px solid teal;
+    border-radius: 8px;
+    float: left;
+    margin: 5px;
+    text-align: center;
+    line-height: 40px;
+    font-weight: bold;
+  }
+  
