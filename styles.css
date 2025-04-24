@@ -80,3 +80,19 @@ footer {
     margin-top: 20px;
     border-radius: 0 0 10px 10px;
 }
+.social-icons {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.social-icons a svg {
+    fill: white;
+    transition: transform 0.2s, fill 0.3s;
+}
+
+.social-icons a:hover svg {
+    fill: #ffcc00; /* Колір при наведенні */
+    transform: scale(1.2);
+}
