@@ -1,0 +1,211 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+}
+
+body {
+    color: #333;
+    background-color: #fafafa;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 20px;
+    margin: 0 200px;
+}
+
+.logo {
+    color: #4a90e2;
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.nav a {
+    margin-left: 20px;
+    color: #999;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.nav a:hover {
+    color: #333;
+}
+
+/* Jumbotron */
+.jumbotron {
+    background: url('img/jumbotron.jpg') no-repeat center center/cover;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.jumbotron h1 {
+    font-size: 42px;
+    margin-bottom: 25px;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.2);
+}
+
+.btn {
+    background: #ff5a9e;
+    color: #fff;
+    padding: 15px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 16px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.btn:hover {
+    background: #e04e8a;
+    transform: translateY(-2px);
+}
+
+/* Services */
+.services, .blog, .about {
+    padding: 70px 50px;
+    text-align: center;
+    background-color: #fff;
+}
+
+.section-title {
+    font-size: 36px;
+    margin-bottom: 50px;
+    color: #333;
+}
+
+.services-grid {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.service-item {
+    max-width: 280px;
+    background-color: #f9f9f9;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+.service-item:hover {
+    transform: translateY(-5px);
+}
+
+.service-item svg {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 20px;
+    fill: #b4b4b4;
+}
+
+.service-item p {
+    color: #666;
+    font-size: 14px;
+}
+
+/* Blog */
+.blog-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.blog-item {
+    display: flex;
+    align-items: flex-start;
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.blog-item img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    margin-right: 20px;
+    border-radius: 6px;
+}
+
+.blog-item .content {
+    text-align: left;
+}
+
+.blog-item .date {
+    color: #999;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.blog-item h3 {
+    font-size: 21px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.blog-item p {
+    color: #666;
+    font-size: 14px;
+}
+
+/* About */
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about-content p {
+    color: #666;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+/* Footer */
+.footer {
+    background: #38404b;
+    padding: 40px 50px;
+    text-align: center;
+}
+
+.footer .logo {
+    color: #bcc9dd;
+    margin-bottom: 20px;
+    font-size: 20px;
+    display: block;
+}
+
+.footer .nav {
+    margin-bottom: 20px;
+}
+
+.footer .nav a {
+    color: #bcc9dd;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.footer .nav a:hover {
+    color: #fff;
+}
+
+.footer p {
+    font-size: 13px;
+    color: #fff;
+    opacity: 0.7;
+}
