@@ -1,0 +1,182 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #ffffff; /* Білий фон для шапки */
+    padding: 10px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #000000; /* Чорний шрифт для "MySite" */
+    display: flex;
+    align-items: center;
+}
+
+.logo::before {
+    content: url('https://img.icons8.com/ios-filled/24/000000/domain.png'); /* Чорна іконка */
+    margin-right: 8px;
+}
+
+.nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav ul li {
+    margin-left: 20px;
+}
+
+.nav ul li a {
+    color: #000000; /* Чорний шрифт для навігації */
+    text-decoration: none;
+}
+
+.nav ul li a:hover {
+    text-decoration: underline;
+}
+
+.hamburger {
+    display: none;
+    font-size: 1.5em;
+    cursor: pointer;
+    color: #000000; /* Чорний шрифт для гамбургера */
+}
+
+main {
+    margin-top: 60px;
+    flex: 1 0 auto;
+}
+
+.hero {
+    padding: 40px 0;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.card {
+    flex: 1;
+    min-width: 200px;
+    margin: 10px;
+    padding: 20px;
+    background: #e6f3ff; /* Фон для перших двох карток */
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card:nth-child(3) {
+    background: #f9faff; /* Майже білий фон для третьої картки з легким відтінком */
+}
+
+.card-icon {
+    width: 50px;
+    height: 50px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: 0 auto 10px;
+}
+
+.card h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.card p {
+    font-size: 0.9em;
+    color: #666;
+}
+
+.card-button {
+    background-color: #0078d4;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.card-button:hover {
+    background-color: #005bb5;
+}
+
+footer {
+    background: #333;
+    color: white;
+    padding: 10px 0;
+    flex-shrink: 0;
+}
+
+footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.social-icons {
+    display: flex;
+}
+
+.social-icon {
+    width: 30px;
+    height: 30px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-left: 10px;
+}
+
+@media (max-width: 768px) {
+    .nav ul {
+        display: none;
+    }
+    .hamburger {
+        display: block;
+    }
+    .cards {
+        flex-direction: column;
+        align-items: center;
+    }
+    .card {
+        width: 100%;
+        max-width: 300px;
+    }
+}
