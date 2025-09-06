@@ -4,65 +4,120 @@ body {
   background: linear-gradient(90deg, #e0e0e0, #bdbdbd);
 }
 
-/* ===== Mobile First ===== */
-
 /* Header */
 .header {
   background: url("images/up_background.jpg") no-repeat center/cover;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  padding: 15px;
+  padding: 15px 20px;
   color: white;
-  text-align: center;
+  position: relative;
 }
 
 .logo {
-  font-size: 20px;
+  font-size: 22px;
   font-weight: bold;
 }
-.logo span {
-  color: #00aaff;
-}
 
+/* Базові стилі для меню */
 nav ul {
   list-style: none;
-  padding: 0;
-  margin: 10px 0;
   display: flex;
-  flex-direction: column;
-  gap: 10px;
+  gap: 30px;   /* відстань між пунктами */
+  margin: 0;
+  padding: 0;
 }
 
+nav ul li {
+  position: relative;
+}
+
+/* Двокрапка між пунктами */
+nav ul li:not(:last-child)::after {
+  content: ":";                 /* двокрапка */
+  position: absolute;
+  right: -18px;                 /* зміщення */
+  color: #FD661E;               /* помаранчева */
+  font-weight: bold;
+}
+
+/* Стилі для лінків */
 nav ul li a {
   text-decoration: none;
   color: white;
   font-weight: 500;
+  letter-spacing: 1.5px;         /* трохи більше відступів між символами */
+  transition: 0.3s;
 }
 
+/* Активний пункт меню */
+nav ul li a.active {
+  color: #FD661E;
+}
+
+
 .social-icons {
-  margin-top: 10px;
   display: flex;
-  gap: 10px;
+  gap: 15px;
 }
 .social-icons a {
   color: white;
-  font-size: 16px;
+  font-size: 18px;
+  transition: 0.3s;
+}
+.social-icons a:hover {
+  color: #00aaff;
+}
+
+.hero-image .image-box {
+  position: relative;   /* щоб абсолютні елементи відносились до цього контейнера */
+  width: 100%;
+  max-width: 500px;
+}
+
+.hero-image .bg-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;     /* розмір на весь контейнер */
+  height: 100%;
+  object-fit: cover;   /* підгонка */
+  z-index: 1;          /* нижче */
+  border-radius: 10px;
+}
+
+.hero-image .main-img {
+  position: relative;
+  z-index: 2;       /* вище за фон */
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* --- Бургер --- */
+.burger {
+  font-size: 28px;
+  cursor: pointer;
+  display: none;
 }
 
 /* Hero */
 .hero {
   display: flex;
-  flex-direction: column; /* Mobile stack */
-  align-items: center;
-  padding: 20px;
-  text-align: center;
+  justify-content: center;   /* Центрування по горизонталі */
+  align-items: center;       /* Центрування по вертикалі */
+  gap: 60px;                 /* Відстань між текстом і картинкою */
+  min-height: 100vh;         /* Секція на весь екран */
+  padding: 0 80px;           /* Відступи тільки з боків */
+  box-sizing: border-box;
 }
 
 .hero-content {
-  max-width: 100%;
+  flex: 1;
+  max-width: 500px;
 }
 
+/* Заголовок Snow Adventure */
 .hero-content h1 {
   margin: 0;
   font-family: 'Jost', sans-serif;
@@ -71,150 +126,258 @@ nav ul li a {
 }
 
 .hero-content h1 .snow {
-  font-size: 48px;
-  line-height: 60px;
+  font-size: 111px;
+  line-height: 1;
   color: #FFFFFF;
-  text-shadow: 2px 2px 0px #FD661E;
+  text-shadow: 3px 3px 0px #FD661E;
   display: block;
 }
 
 .hero-content h1 .adventure {
-  font-size: 36px;
-  line-height: 44px;
+  font-size: 80px;
+  line-height: 1;
   color: #1E92FD;
-  text-shadow: 1px 1px 0px #FFFFFF;
+  text-shadow: 2px 2px 0px #FFFFFF;
   display: block;
 }
 
 .hero-content p {
-  margin: 15px 0;
-  font-size: 14px;
+  margin: 20px 0;
+  font-size: 16px;
   color: #444;
 }
 
-/* Search Box */
 .search-box {
   display: flex;
-  flex-direction: column;
-  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
   background: white;
-  border-radius: 10px;
-  padding: 10px 15px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  width: 100%;
-  max-width: 400px;
+  border-radius: 12px;
+  padding: 15px 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  max-width: 500px;
 }
+
+/* Ліва частина */
 .search-box .select {
   display: flex;
   flex-direction: column;
-  font-size: 14px;
+  gap: 4px;
 }
+
+.search-box label {
+  font-size: 14px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #000;
+}
+
+.search-box label::before {
+  content: "\f3c5"; /* FA map-marker-alt */
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  color: #FD661E;
+}
+
+/* Текст під label */
 .search-box select {
   border: none;
   outline: none;
   font-size: 14px;
+  color: #777;
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
 }
-.search-box .search-btn {
-  background: orange;
+
+/* Права кнопка */
+.search-btn {
+  background: #FD661E;
   border: none;
-  padding: 12px;
-  border-radius: 6px;
+  padding: 15px 70px;
+  border-radius: 10px;
   color: white;
   font-weight: bold;
+  font-size: 10px;
   cursor: pointer;
-  width: 100%;
+  text-transform: uppercase;
+  transition: background 0.3s;
+}
+
+.search-btn:hover {
+  background: #e65512;
 }
 
 /* Hero Image */
 .hero-image {
-  margin-top: 20px;
-  width: 100%;
-  max-width: 350px;
+  flex: 1;
+  max-width: 500px;
 }
 .hero-image .image-box {
-  background: url("images/snowman_background.jpg") no-repeat center/cover;
-  padding: 10px;
-  border-radius: 10px;
+  background: none;   /* Прибраний фон */
+  padding: 0;
 }
 .hero-image img {
   width: 100%;
+  border-radius: 10px;
   display: block;
 }
 
-/* Кнопки знизу */
-.bottom-buttons {
-  display: none; /* приховано на мобільних */
-}
-
-.btn {
-  border: none;
-  padding: 10px 20px;
-  border-radius: 6px;
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
-}
-.btn.blue {
-  background: #1E92FD;
-}
-.btn.orange {
-  background: #FD661E;
-}
-
-/* ===== Desktop / Tablet ===== */
-@media (min-width: 768px) {
-  .header {
-    flex-direction: row;
-    justify-content: space-between;
-    text-align: left;
-    padding: 15px 50px;
+/* --- Mobile styles --- */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 20px;
+  }
+  .hero-content {
+    max-width: 100%;
   }
 
   nav ul {
-    flex-direction: row;
-    gap: 30px;
+    flex-direction: column;
+    gap: 15px;
+    background: rgba(0, 0, 0, 0.9);
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    display: none;
+    padding: 20px;
+    text-align: center;
   }
 
+  nav.active ul {
+    display: flex;
+  }
+
+  .burger {
+    display: block;
+  }
+
+  .social-icons {
+    display: none;
+  }
+}
+.menu-btn {
+  background: transparent;   /* прибираємо білий фон */
+  border: none;              /* прибираємо рамку */
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 15px;   /* ширина кнопки */
+  height: 15px;  /* висота кнопки */
+  padding: 0;
+  margin-left: 1px; /* відступ від іконок */
+}
+
+.menu-btn span {
+  display: block;
+  height: 3px;             /* товщина лінії */
+  width: 100%;
+  background-color: white;  /* колір ліній (можеш змінити на білий/оранжевий) */
+  border-radius: 2px;
+}
+
+
+
+/* Floating Buttons */
+.floating-buttons {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  gap: 15px;
+}
+.floating-buttons .btn {
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  color: white;
+}
+.floating-buttons .blue {
+  background: #007bff;
+}
+.floating-buttons .orange {
+  background: #FD661E;
+}
+
+/* ===== MOBILE-ONLY (≤480px) OVERRIDES — встав нижче всіх стилів ===== */
+@media (max-width: 480px) {
+  html, body { overflow-x: hidden; }
+
+  /* Header / меню */
+  .header { padding: 12px 16px; }
+  .burger { display: block; }              /* показати бургер */
+  .social-icons { display: none; }         /* ховаємо іконки зверху */
+
+  nav { position: static; }
+  nav ul {
+    position: absolute;
+    top: 60px; left: 0; right: 0;
+    display: none;                         /* приховано доки бургер не натиснули */
+    flex-direction: column;
+    gap: 16px;
+    padding: 16px 20px;
+    background: rgba(0,0,0,.92);
+    text-align: center;
+    z-index: 1000;
+  }
+  nav.active ul { display: flex; }         /* відкриття меню по бургеру */
+  nav ul li:not(:last-child)::after { content: none; } /* двокрапки вимкнено на мобілці */
+
+  /* Hero блок */
   .hero {
-    flex-direction: row;
-    justify-content: space-between;
-    text-align: left;
-    padding: 80px;
-    min-height: 80vh;
-    gap: 40px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 28px;
+    padding: 24px 16px;
+    min-height: auto;
+    text-align: center;
   }
-
-  .hero-content {
-    max-width: 45%;
-  }
+  .hero-content { max-width: 100%; }
 
   .hero-content h1 .snow {
-    font-size: 130px;
-    line-height: 169px;
+    font-size: 56px;
+    line-height: 1;
+    text-shadow: 2px 2px 0 #FD661E;
   }
   .hero-content h1 .adventure {
-    font-size: 90px;
-    line-height: 117px;
+    font-size: 42px;
+    line-height: 1;
+    text-shadow: 1px 1px 0 #FFFFFF;
   }
+  .hero-content p { font-size: 14px; margin: 12px 0 16px; }
 
+  /* Пошук */
   .search-box {
-    flex-direction: row;
-    align-items: center;
-    gap: 15px;
+    width: 100%;
+    max-width: 420px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    padding: 12px 14px;
+    border-radius: 12px;
   }
-  .search-box .search-btn {
-    width: auto;
-  }
+  .search-btn { width: 100%; padding: 12px; font-size: 12px; }
 
-  .hero-image {
-    max-width: 400px;
-  }
+  /* Картинка */
+  .hero-image { width: 100%; max-width: 360px; }
+  .hero-image .image-box { width: 100%; }
+  .hero-image .bg-img { position: relative; height: auto; }
+  .hero-image .main-img { top: -20px; }    /* трохи виходить за фон */
 
-  .bottom-buttons {
-    position: fixed;
-    right: 30px;
-    bottom: 30px;
-    display: flex;
-    gap: 15px;
+  /* Кнопки знизу */
+  .floating-buttons {
+    right: 12px; bottom: 12px;
+    flex-direction: column;
+    gap: 8px;
   }
+  .floating-buttons .btn { padding: 10px 14px; font-size: 12px; }
 }
