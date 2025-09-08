@@ -317,10 +317,10 @@ nav ul li a.active {
 .trip-info {
   padding: 20px;
   text-align: left;
-  background: url("images/whitebackground.jpg") no-repeat center;
+  background-color: white;
   background-size: cover;
   border-radius: 12px; /* якщо хочеш закруглені краї */
-  color: #fff; /* щоб текст не губився */
+  color: white; /* щоб текст не губився */
 }
 
 
@@ -333,7 +333,7 @@ nav ul li a.active {
 }
 
 .trip-info h2 {
-  font-size: 24px;
+  font-size: 30px;
   font-weight: 800;   /* робить жирним */
   margin: 10px 0;
   color: #181D4E;     /* темний синьо-фіолетовий відтінок */
@@ -1363,7 +1363,7 @@ nav ul li a.active {
 /* === Travel Packages Section === */
 .packages-section {
   position: relative;
-  padding: 80px 20px;
+  padding: 0px 0px;
   background-color: white;
   background-size: cover;
   background-position: center;
@@ -1838,7 +1838,7 @@ nav ul li a.active {
 }
 
 .tb-main-img {
-  width: 100%;
+  width: 90%;
   aspect-ratio: 16 / 9;
   background: #f0f0f0;
   border-radius: 6px;
@@ -1877,15 +1877,16 @@ nav ul li a.active {
 
 .tb-btn {
   display: inline-block;
-  padding: 8px 14px;
-  background: #1e88ff;
+  padding: 14px 28px;
+  background-color: #1e88ff;
   color: #fff;
   text-decoration: none;
-  text-align: center;
-  border-radius: 6px;
   font-weight: 700;
-  height: 33px;
-  width: 10%;
+  font-size: 16px;
+  border-radius: 8px;
+  white-space: nowrap;
+  text-align: center;
+  transition: background-color 0.2s ease;
 }
 
 /* SIDE list cards: image on left, text on right */
@@ -2025,16 +2026,14 @@ nav ul li a.active {
  /* ===== Mobile-first styles ===== */
   /* ===== Mobile-first styles ===== */
 :root {
-  --footer-bg: url('images/footer.jpg'); /* встав свій шлях до фото */
-  --width: 100%;
+  --footer-bg: url('images/footer.jpg');
   --overlay: rgba(8, 15, 30, .62);
   --text: #ffffff;
-  --muted: rgba(255,255,255,.82);
+  --muted: rgba(255, 255, 255, 0.82);
   --accent: #ff5a2c;
   --maxw: 1200px;
   --radius: 14px;
 }
-
 .travel-footer {
   color: var(--text);
   background-image: linear-gradient(var(--overlay), var(--overlay)), var(--footer-bg);
@@ -2042,10 +2041,12 @@ nav ul li a.active {
   background-repeat: no-repeat;
   background-size: cover;
   height: 100%;
+  width: 100%;
 }
 
 .footer__inner {
   max-width: var(--maxw);
+  width: 100%;
   margin-top: 0;
   margin-right: auto;
   margin-bottom: 0;
@@ -2101,7 +2102,7 @@ nav ul li a.active {
   padding-right: 14px;
   padding-bottom: 10px;
   padding-left: 14px;
-  border-radius: 10px;
+  border-radius: 3px;
   font-weight: 700;
   text-decoration: none;
   transition: transform 0.15s ease, opacity 0.15s ease;
@@ -2188,8 +2189,10 @@ nav ul li a.active {
 /* Payment icons */
 .payments {
   display: flex;
-  gap: 8px;
+  gap: 30px;
   justify-content: flex-start;
+  height: 25px;
+  
 }
 
 .pay {
@@ -2278,6 +2281,15 @@ nav ul li a.active {
     width: 38px;
     height: 38px;
   }
+
+}/* Встановлюємо box-sizing для всіх елементів */
+*, *::before, *::after {
+    box-sizing: border-box;
 }
 
-  
+  html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+}
