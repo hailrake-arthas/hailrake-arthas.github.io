@@ -981,20 +981,28 @@ nav ul li a.active {
   box-shadow: 0 4px 15px rgba(0,0,0,0.3);
 }
 
-/* Responsive */
+/* Вже є flex-direction: column для мобільних в .adventure-container */
 @media (max-width: 768px) {
   .adventure-container {
     flex-direction: column;
+    align-items: center; /* Центруємо вміст */
     text-align: center;
+    gap: 20px; /* Можна зменшити відстань між блоками */
+  }
+  .adventure-text {
+    max-width: 100%; /* Щоб текст не виходив за межі */
+    padding: 0 10px;
+    text-align: center; /* Для мобільних */
+  }
+  .adventure-image {
+    max-width: 100%;
+    padding: 0 10px;
   }
   .adventure-title {
     font-size: 30px;
   }
   .adventure-desc, .adventure-list li {
     font-size: 14px;
-  }
-  .adventure-text {
-    text-align: center; /* Для мобільних */
   }
 }
 
@@ -1004,6 +1012,12 @@ nav ul li a.active {
   }
   .adventure-title {
     font-size: 24px;
+  }
+  .adventure-text {
+    padding: 0 5px;
+  }
+  .adventure-image {
+    padding: 0 5px;
   }
 }
 
