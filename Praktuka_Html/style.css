@@ -10,7 +10,7 @@ main {
 /* Header */
 .header {
   background: url("images/up_background.jpg") no-repeat center/cover;
-  display: flex;
+  display: flex ;
   justify-content: space-between;
   align-items: center;
   padding: 15px 20px;
@@ -291,12 +291,17 @@ nav ul li a.active {
 }
 
 /* Floating Buttons */
+
 .floating-buttons {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
+  position: sticky;
+  bottom: 20px; /* Підняти на 20px від низу */
+  right: 0;
   display: flex;
+  justify-content: flex-end;
   gap: 15px;
+  width: 100%;
+  padding: 10px;
+  background-color: #0000; /* Колір фону, як на скріншоті */
 }
 .floating-buttons .btn {
   border: none;
@@ -308,6 +313,7 @@ nav ul li a.active {
 }
 .floating-buttons .blue {
   background: #007bff;
+  
 }
 .floating-buttons .orange {
   background: #FD661E;
