@@ -99,31 +99,101 @@ nav ul li a.active {
 }
 
 /* --- Бургер --- */
+/* бургер */
 .burger {
+  display: none; /* спочатку прихований на великих екранах */
   font-size: 28px;
   cursor: pointer;
-  display: block;
+  z-index: 1001; /* поверх меню */
+  position: relative;
 }
 
+.burger i {
+  display: none; /* обидва іконки приховані */
+}
 
-/* Hero */
+.burger #openIcon {
+  display: inline-block; /* показати бургер по дефолту */
+}
+
+.nav {
+  display: flex;
+  gap: 20px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.nav a:hover {
+  color: #007bff;
+}
+.nav.active ~ .burger #openIcon {
+  display: none;
+}
+
+.nav.active ~ .burger #closeIcon {
+  display: inline-block;
+}
+
+/* мобільна версія */
+@media (max-width: 768px) {
+  .burger {
+    display: block;
+  }
+
+  .nav {
+    position: fixed;
+    top: 0;
+    right: -100%; /* приховати меню */
+    height: 100%;
+    width: 250px;
+    background: #fff;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    transition: right 0.3s ease-in-out;
+    box-shadow: -2px 0 10px rgba(0,0,0,0.2);
+    z-index: 1000;
+  }
+
+  .nav.active {
+    right: 0; /* показати меню */
+  }
+
+  /* коли меню відкрите – показати хрестик */
+  .nav.active ~ .burger #openIcon {
+    display: none;
+  }
+
+  .nav.active ~ .burger #closeIcon {
+    display: inline-block;
+  }
+}
+
+/* ---------- BASE (Mobile Devices: 320px — 480px) ---------- */
+
 .hero {
   display: flex;
-  justify-content: center;   /* Центрування по горизонталі */
-  align-items: center;       /* Центрування по вертикалі */
-  gap: 60px;                 /* Відстань між текстом і картинкою */
-  min-height: 100vh;         /* Секція на весь екран */
-  padding: 0 80px;           /* Відступи тільки з боків */
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  gap: 30px;
+  min-height: 100vh;
   box-sizing: border-box;
   width: 100%;
+  text-align: center;
 }
 
 .hero-content {
-  flex: 1;
-  max-width: 500px;
+  width: 100%;
+  max-width: 100%;
 }
 
-/* Заголовок Snow Adventure */
 .hero-content h1 {
   margin: 0;
   font-family: 'Jost', sans-serif;
@@ -132,44 +202,44 @@ nav ul li a.active {
 }
 
 .hero-content h1 .snow {
-  font-size: 111px;
+  font-size: 48px;
   line-height: 1;
   color: #FFFFFF;
-  text-shadow: 3px 3px 0px #FD661E;
+  text-shadow: 2px 2px 0px #FD661E;
   display: block;
 }
 
 .hero-content h1 .adventure {
-  font-size: 80px;
+  font-size: 32px;
   line-height: 1;
   color: #1E92FD;
-  text-shadow: 2px 2px 0px #FFFFFF;
+  text-shadow: 1px 1px 0px #FFFFFF;
   display: block;
 }
 
 .hero-content p {
-  margin: 20px 0;
-  font-size: 16px;
+  margin: 15px 0;
+  font-size: 14px;
   color: #444;
 }
 
 .search-box {
   width: 100%;
+  flex-direction: column;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  align-items: stretch;
+  gap: 10px;
   background: white;
   border-radius: 12px;
-  padding: 15px 20px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-  max-width: 500px;
+  padding: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* Ліва частина */
 .search-box .select {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 5px;
+  align-items: flex-start;
 }
 
 .search-box label {
@@ -188,83 +258,231 @@ nav ul li a.active {
   color: #FD661E;
 }
 
-/* Текст під label */
 .search-box select {
   border: none;
   outline: none;
   font-size: 14px;
   color: #777;
   background: transparent;
-  cursor: pointer;
-  padding: 0;
+  padding: 5px 0;
+  width: 100%;
 }
 
-/* Права кнопка */
 .search-btn {
   background: #FD661E;
   border: none;
-  padding: 15px 70px;
+  padding: 12px;
   border-radius: 10px;
   color: white;
   font-weight: bold;
-  font-size: 10px;
+  font-size: 14px;
   cursor: pointer;
   text-transform: uppercase;
   transition: background 0.3s;
+  width: 100%;
 }
 
 .search-btn:hover {
   background: #e65512;
 }
 
-/* Hero Image */
 .hero-image {
-  flex: 1;
-  max-width: 500px;
+  width: 100%;
+  max-width: 100%;
 }
+
 .hero-image .image-box {
-  background: none;   /* Прибраний фон */
+  background: none;
   padding: 0;
+  width: 100%;
 }
+
 .hero-image img {
   width: 100%;
   border-radius: 10px;
   display: block;
 }
 
-/* --- Mobile styles --- */
-@media (max-width: 768px) {
+
+/* ---------- TABLETS: 481px — 768px ---------- */
+@media (min-width: 481px) {
   .hero {
-    flex-direction: column;
-    text-align: center;
-    padding: 40px 20px;
+    padding: 30px;
   }
+
+  .hero-content h1 .snow {
+    font-size: 64px;
+  }
+
+  .hero-content h1 .adventure {
+    font-size: 42px;
+  }
+
+  .search-box {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+  }
+
+  .search-box .select {
+    flex: 1;
+  }
+
+  .search-btn {
+    max-width: 150px;
+    padding: 12px;
+    margin-left: 10px;
+  }
+
+  .hero-image .image-box {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+}
+
+
+/* ---------- SMALL LAPTOPS: 769px — 1024px ---------- */
+@media (min-width: 769px) {
+  .hero {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    padding: 60px 40px;
+    text-align: left;
+    background: whit
+  }
+
   .hero-content {
+    max-width: 500px;
+  }
+
+  .hero-content h1 .snow {
+    font-size: 80px;
+  }
+
+  .hero-content h1 .adventure {
+    font-size: 60px;
+  }
+
+  .hero-content p {
+    font-size: 16px;
+  }
+
+  .search-box {
+    max-width: 500px;
+  }
+
+  .hero-image {
+    max-width: 500px;
+  }
+
+  .hero-image .image-box {
     max-width: 100%;
+  }
+}
+
+
+/* ---------- DESKTOPS: 1025px — 1200px ---------- */
+@media (min-width: 1025px) {
+  .hero-content h1 .snow {
+    font-size: 100px;
+  }
+
+  .hero-content h1 .adventure {
+    font-size: 72px;
+  }
+
+  .hero-content p {
+    font-size: 18px;
+  }
+
+  .search-btn {
+    font-size: 16px;
+  }
+}
+
+
+/* ---------- EXTRA LARGE SCREENS: 1201px+ ---------- */
+@media (min-width: 1201px) {
+  .hero {
+    padding: 80px;
+  }
+
+  .hero-content h1 .snow {
+    font-size: 111px;
+  }
+
+  .hero-content h1 .adventure {
+    font-size: 80px;
+  }
+
+  .hero-content p {
+    font-size: 20px;
+  }
+
+  .search-box {
+    padding: 20px 30px;
+  }
+
+  .hero-image {
+    max-width: 600px;
+  }
+}
+@media (max-width: 768px) {
+  .nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: white;
+    z-index: 999;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav.active {
+    display: flex;
   }
 
   nav ul {
     flex-direction: column;
+    align-items: center;
     gap: 15px;
-    background: rgba(0, 0, 0, 0.9);
-    position: absolute;
-    top: 60px;
-    left: 0;
-    right: 0;
-    display: none;
-    padding: 20px;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background: white;
+  }
+
+  nav ul li {
+    width: 100%;
     text-align: center;
+      background: white;
   }
 
-  nav.active ul {
-    display: flex;
-  }
-
-  .burger {
+  nav ul li a {
     display: block;
+    padding: 12px 0;
+    width: 100%;
+    background: transparent;  /* ❌ Прибери білий фон тут */
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
   }
 
-  .social-icons {
+  nav ul li a:hover {
+    background: #f2f2f2;
+    color: #FD661E;
+  }
+
+  /* Прибрати двокрапки на мобілці */
+  nav ul li::after {
     display: none;
   }
 }
@@ -874,159 +1092,150 @@ nav ul li a.active {
   }
 }
 /* Adventure section */
-.adventure-section {
-  display: flex;
-  align-items: flex-start; /* вирівнює по верхньому краю */
-  justify-content: left; /* центрує в середині секції */
-  gap: 40px; /* відстань між картинкою і текстом */
-  width: 100%;
-  background-image: url(images/Embrance_the_thrill.jpg);
-  background-size: cover;
-  position: relative;
-  z-index: 1;
-  text-align: right; /* Змінено на left */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
-.adventure-text {
-  max-width: 500px;  /* щоб текст не розтягувався на всю ширину */
-  text-align: left;  /* текст зліва */
-  justify-content: left;
+
+
+
+/* MOBILE FIRST – 320px and up */
+.adventure-section {
+  background-image: url(images/Embrance_the_thrill.jpg);
+  padding: 30px 15px;
+  position: relative;
 }
 
 .adventure-section::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.4);
+  background: rgba(0, 0, 0, 0.5);
   z-index: 0;
 }
 
 .adventure-container {
-  position: relative;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: left; /* Змінено на flex-start */
-  gap: 40px;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
+  gap: 20px;
+  position: relative;
   z-index: 1;
+  max-width: 100%;
+  width: 100%;
+}
+
+.adventure-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
 }
 
 .adventure-text {
-  flex: 1;
-  color: #fff;
-  text-align: left; /* Додано */
-  justify-content: left;
-
+  color: white;
+  text-align: center;
+  padding: 0 10px;
 }
 
 .adventure-sub {
-  font-family: 'Patrick Hand', cursive;
-  font-size: 20px;
-  color: #fff;
-  margin-bottom: 15px;
-  text-align: left; /* Змінено на left */
+  font-size: 18px;
+  margin-bottom: 10px;
 }
 
 .adventure-title {
-  font-size: 42px;
-  font-weight: 700;
-  margin-bottom: 20px;
-  color: #fff;
-  line-height: 1.3;
-  text-align: left; /* Додано */
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 15px;
 }
 
 .adventure-desc {
-  font-size: 16px;
-  line-height: 1.6;
-  margin-bottom: 30px;
-  color: white;
-  text-align: left; /* Додано */
+  font-size: 14px;
+  margin-bottom: 20px;
+  line-height: 1.5;
 }
 
 .adventure-list {
   list-style: none;
   padding: 0;
-  margin: 0 0 30px;
-  text-align: left; /* Додано */
-  justify-content: flex-end;
+  margin: 0 0 20px;
 }
 
 .adventure-list li {
-  margin: 12px 0;
-  font-size: 16px;
-  display: flex;
-  align-items: left;
-  color: white;
-  border-bottom: 1px solid rgba(255,255,255,0.2);
-  padding-bottom: 10px;
-}
-
-
-.adventure-list i {
-  color: white;
-  margin-right: 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid rgba(255,255,255,0.3);
+  padding-bottom: 8px;
 }
 
 .adventure-btn {
-  background: orangered;
-  color: #fff;
+  background-color: orangered;
+  color: white;
   border: none;
   padding: 12px 24px;
   font-size: 16px;
-  border-radius: 6px;
+  border-radius: 5px;
   cursor: pointer;
-  font-weight: bold;
-   margin-bottom: 40px;
+  width: 100%;
+  max-width: 300px;
 }
 
-.adventure-image img {
-  max-width: 500px;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+/* TABLETS – 481px–768px */
+@media (min-width: 481px) {
+  .adventure-title {
+    font-size: 28px;
+  }
+
+  .adventure-desc,
+  .adventure-list li {
+    font-size: 15px;
+  }
 }
 
-/* Вже є flex-direction: column для мобільних в .adventure-container */
-@media (max-width: 768px) {
+/* SMALL LAPTOPS – 769px–1024px */
+@media (min-width: 769px) {
   .adventure-container {
-    flex-direction: column;
-    align-items: center; /* Центруємо вміст */
-    text-align: center;
-    gap: 20px; /* Можна зменшити відстань між блоками */
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
   }
+
   .adventure-text {
-    max-width: 100%; /* Щоб текст не виходив за межі */
-    padding: 0 10px;
-    text-align: center; /* Для мобільних */
+    max-width: 50%;
+    text-align: left;
   }
+
   .adventure-image {
-    max-width: 100%;
-    padding: 0 10px;
+    max-width: 45%;
   }
+
   .adventure-title {
-    font-size: 30px;
-  }
-  .adventure-desc, .adventure-list li {
-    font-size: 14px;
+    font-size: 32px;
   }
 }
 
-@media (max-width: 480px) {
-  .adventure-section {
-    padding: 40px 15px;
-  }
+/* DESKTOPS – 1025px–1200px */
+@media (min-width: 1025px) {
   .adventure-title {
-    font-size: 24px;
+    font-size: 36px;
   }
-  .adventure-text {
-    padding: 0 5px;
-  }
-  .adventure-image {
-    padding: 0 5px;
+
+  .adventure-desc {
+    font-size: 16px;
   }
 }
 
+/* XL SCREENS – 1201px+ */
+@media (min-width: 1201px) {
+  .adventure-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .adventure-title {
+    font-size: 40px;
+  }
+}
 /* Itineraries Section */
 /* Travel Itineraries Section */
 .travel-itineraries-section {
