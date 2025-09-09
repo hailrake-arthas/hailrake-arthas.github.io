@@ -10,13 +10,13 @@ main {
 /* Header */
 .header {
   background: url("images/up_background.jpg") no-repeat center/cover;
-  display: flex ;
+  display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 15px 20px;
-  color: white;
   position: relative;
   width: 100%;
+  color: white;
 }
 
 .logo {
@@ -24,39 +24,56 @@ main {
   font-weight: bold;
 }
 
-/* Базові стилі для меню */
-nav ul {
+.social-icons {
+  order: 2; /* щоб бути справа */
+  display: flex;
+  gap: 0px;
+   margin-left: 100px; /* або більше, якщо треба сильніше змістити */
+}
+
+.social-icons a {
+  color: white;
+  font-size: 18px;
+  transition: 0.3s;
+}
+
+.burger {
+  display: none; /* ❗️ховаємо бургер на десктопі */
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.nav ul {
   list-style: none;
   display: flex;
-  gap: 30px;   /* відстань між пунктами */
+  gap: 30px;
   margin: 0;
   padding: 0;
 }
 
-nav ul li {
+.nav ul li {
   position: relative;
 }
 
-/* Двокрапка між пунктами */
-nav ul li:not(:last-child)::after {
-  content: ":";                 /* двокрапка */
+.nav ul li:not(:last-child)::after {
+  content: ":";
   position: absolute;
-  right: -18px;                 /* зміщення */
-  color: #FD661E;               /* помаранчева */
+  right: -18px;
+  color: #FD661E;
   font-weight: bold;
 }
 
-/* Стилі для лінків */
-nav ul li a {
+.nav ul li a {
   text-decoration: none;
   color: white;
-  font-weight: 500;
-  letter-spacing: 1.5px;         /* трохи більше відступів між символами */
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
   transition: 0.3s;
+  justify-content: center;
 }
-
-/* Активний пункт меню */
-nav ul li a.active {
+.nav ul li a.active {
   color: #FD661E;
 }
 
@@ -455,7 +472,7 @@ nav ul li a.active {
     margin: 0;
     padding: 0;
     width: 100%;
-     background: white;
+    background-image: url('images/up_background.jpg');
   }
 
   nav ul li {
