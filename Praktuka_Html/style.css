@@ -559,7 +559,7 @@ main {
   text-align: left;
   background-color: white;
   background-size: cover;
-  border-radius: 12px; /* якщо хочеш закруглені краї */
+  border-radius: 0pxpx; /* якщо хочеш закруглені краї */
   color: white; /* щоб текст не губився */
 }
 
@@ -786,7 +786,7 @@ main {
   padding: 60px 20px;
   text-align: center;
   position: relative;
-  border-radius: 12px; /* щоб виглядало гарно, можна прибрати */
+  border-radius: 0px; /* щоб виглядало гарно, можна прибрати */
     width: 100%;
 }
 
@@ -1468,6 +1468,7 @@ main {
   font-size: 18px;
   line-height: 1.6;
   color: #e0e0e0;
+  
 }
 
 .review-cards {
@@ -1475,6 +1476,7 @@ main {
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 40px;
   margin-top: 50px;
+  
 }
 
 .review-card {
@@ -1483,9 +1485,10 @@ main {
   padding: 30px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* текст зверху, автор знизу */
+  justify-content: center; /* текст зверху, автор знизу */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   color: #fff;
+  
 }
 
 
