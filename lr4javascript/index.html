@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Статистичний аналіз і книги</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Аналіз даних у JavaScript</h1>
+
+  <!-- === СЕКЦІЯ 3 === -->
+  <section>
+    <h2>3. Статистичний аналіз даних про працівників</h2>
+    <button onclick="showAverageSalary()">Обчислити середню зарплату</button>
+    <p id="averageSalary"></p>
+
+    <button onclick="showMostExperienced()">Найдосвідченіший працівник</button>
+    <p id="mostExperienced"></p>
+  </section>
+
+  <!-- === СЕКЦІЯ 4 === -->
+  <section>
+    <h2>4. Обробка та аналіз даних про книги</h2>
+    <button onclick="showUnreadBooks()">Непрочитані книги</button>
+    <p id="unreadBooks"></p>
+
+    <button onclick="showBooksByAuthor()">Книги автора (J.K. Rowling)</button>
+    <p id="booksByAuthor"></p>
+
+    <button onclick="showTopRatedBooks()">Топ-рейтинг книг > 4</button>
+    <p id="topRatedBooks"></p>
+  </section>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
