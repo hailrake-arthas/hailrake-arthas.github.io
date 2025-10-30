@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Робота з об'єктами, масивами та індивідуальний проєкт</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>📚 Бібліотека JavaScript + 🎵 Музичний плейлист</h1>
+
+  <!--Приклади -->
+  <section id="task1">
+    <h2>Завдання 1: Робота з об'єктом book</h2>
+    <button id="showBookInfo">Показати інформацію про книгу</button>
+    <div id="bookOutput" class="output"></div>
+  </section>
+
+  <section id="task2">
+    <h2>Завдання 2: Робота з масивом library</h2>
+    <button id="showLibrary">Показати бібліотеку</button>
+    <div id="libraryOutput" class="output"></div>
+  </section>
+
+  <section id="task3">
+    <h2>Завдання 3: Методи масивів</h2>
+    <button id="sortLibrary">Сортувати за роком</button>
+    <button id="showUnread">Показати непрочитані книги</button>
+    <button id="findTolkien">Знайти книгу Толкіна</button>
+    <div id="task3Output" class="output"></div>
+  </section>
+
+  <section id="task4">
+    <h2>Завдання 4: Додавання книги користувачем</h2>
+    <form id="addBookForm">
+      <input type="text" id="title" placeholder="Назва книги" required>
+      <input type="text" id="author" placeholder="Автор" required>
+      <input type="number" id="year" placeholder="Рік видання" required>
+      <label>
+        <input type="checkbox" id="isRead"> Прочитана
+      </label>
+      <button type="submit">Додати книгу</button>
+    </form>
+    <div id="userOutput" class="output"></div>
+  </section>
+
+  <!--Індивідуальні завдання-->
+  <section id="individual">
+    <h2>🎵 Індивідуальне завдання: Музичний плейлист</h2>
+
+    <section id="music1">
+      <h3>1. Робота з об'єктом song</h3>
+      <button id="showSongInfo">Показати інформацію про пісню</button>
+      <div id="songOutput" class="output"></div>
+    </section>
+
+    <section id="music2">
+      <h3>2. Робота з масивом playlist</h3>
+      <button id="showPlaylist">Показати плейлист</button>
+      <div id="playlistOutput" class="output"></div>
+    </section>
+
+    <section id="music3">
+      <h3>3. Методи масивів для плейлиста</h3>
+      <button id="sortPlaylist">Сортувати за тривалістю</button>
+      <button id="showFavorites">Показати улюблені</button>
+      <button id="findArtist">Знайти пісню виконавця</button>
+      <div id="task3OutputMusic" class="output"></div>
+    </section>
+
+    <section id="music4">
+      <h3>4. Додавання пісні користувачем</h3>
+      <form id="addSongForm">
+        <input type="text" id="songTitle" placeholder="Назва пісні" required>
+        <input type="text" id="songArtist" placeholder="Виконавець" required>
+        <input type="number" id="songDuration" placeholder="Тривалість (сек)" required>
+        <label>
+          <input type="checkbox" id="songFavorite"> Улюблена
+        </label>
+        <button type="submit">Додати пісню</button>
+      </form>
+      <div id="userOutputMusic" class="output"></div>
+    </section>
+
+    <section id="music5">
+      <h3>5. Додаткові завдання</h3>
+      <button id="markAsFavorite">Позначити першу пісню як улюблену</button>
+      <button id="calcAverage">Обчислити середню тривалість</button>
+      <div id="extraOutputMusic" class="output"></div>
+    </section>
+  </section>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
