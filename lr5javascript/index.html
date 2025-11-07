@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Лабораторна робота №7</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+<hr>
+
+<section id="task1">
+  <h2>1. Перетворення температури (Фаренгейт ↔ Цельсій)</h2>
+  <!-- Місце для фото -->
+
+  <label>Температура за Фаренгейтом:</label>
+  <input type="number" id="fahrenheit"><br>
+  <label>Температура за Цельсієм:</label>
+  <input type="number" id="celsius">
+</section>
+
+<hr>
+
+<section id="task2">
+  <h2>2. Перевірка знання таблиці множення</h2>
+  <!-- Місце для фото -->
+
+  <div id="score">Рахунок: 0</div>
+  <div id="question">Завдання: натисніть "Наступне завдання"</div>
+  <input type="number" id="answer">
+  <button id="checkBtn">Перевірити</button>
+  <button id="nextBtn">Наступне завдання</button>
+  <div id="result"></div>
+</section>
+
+<hr>
+
+<section id="task3">
+  <h2>3. Таблиця множення з вибором відповіді (радіокнопки)</h2>
+  <!-- Місце для фото -->
+
+  <div id="radioQuestion">Завдання: натисніть "Наступне"</div>
+  <div id="radioOptions"></div>
+  <button id="nextRadioBtn">Наступне завдання</button>
+  <div id="radioResult"></div>
+</section>
+
+<hr>
+<section id="task4">
+  <h2>4. Ротатор зображень</h2>
+
+  <div id="rotator"></div>
+</section>
+
+
+<hr>
+
+<section id="task5">
+  <h2>5. Капча</h2>
+  <!-- Місце для фото -->
+
+  <div id="captcha"></div>
+  <input type="text" id="captchaInput" placeholder="Введіть число">
+  <button id="checkCaptchaBtn">Перевірити</button>
+  <div id="captchaResult"></div>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
