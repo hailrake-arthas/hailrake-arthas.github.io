@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Geolocation API Demo</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        button { margin: 5px; padding: 8px 12px; }
+        #location, #distance { margin-top: 10px; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+<h2>Geolocation API</h2>
+
+<button onclick="getOnce()">📍 Отримати координати (Частина 1)</button>
+<button onclick="startWatch()">▶️ Стежити за позицією (Частина 2)</button>
+<button onclick="stopWatch()">⏹️ Зупинити стеження</button>
+
+<div id="location">Координати зʼявляться тут</div>
+<div id="distance">Відстань зʼявиться тут</div>
+
+<script src="script.js"></script>
+</body>
+</html>
