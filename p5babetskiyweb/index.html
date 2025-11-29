@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>ToDo List</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="todo-app">
+    <h2>📝 To-Do List</h2>
+
+    <input
+        type="text"
+        id="taskInput"
+        placeholder="Введіть нове завдання та натисніть Enter"
+    >
+
+    <div class="buttons">
+        <button onclick="showAll()">Усі</button>
+        <button onclick="showActive()">Невиконані</button>
+        <button onclick="showCompleted()">Виконані</button>
+    </div>
+
+    <ul id="taskList"></ul>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
