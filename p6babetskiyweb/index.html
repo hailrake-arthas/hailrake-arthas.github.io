@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Магазин</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h2>Магазин товарів</h2>
+
+    <div class="cart-icon" onclick="openCart()">
+        🛒 <span id="cartCount">0</span>
+    </div>
+</header>
+
+<div class="products">
+
+
+     <div class="card">
+        <div class="img-placeholder">
+            <img src="images/casio1.jpg" alt="Casio" />
+        </div>
+        <h3>Турборахунок</h3>
+        <p>Ціна: 500 грн</p>
+        <button onclick="addToCart(1, 'Турборахунок', 500)">Додати в корзину</button>
+    </div>
+
+ <div class="card">
+        <div class="img-placeholder">
+            <img src="images/rolex2.jpg" alt="Rolex" />
+        </div>
+        <h3>Premium пакет</h3>
+        <p>Ціна: 800 грн</p>
+        <button onclick="addToCart(2, 'Premium пакет', 800)">Додати в корзину</button>
+    </div>
+
+</div>
+
+
+<div id="modal" class="modal">
+    <div class="modal-content" id="modalContent"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
