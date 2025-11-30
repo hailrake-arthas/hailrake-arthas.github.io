@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Tabs + CSS Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="tabs">
+    <div class="tab whiteborder">Вкладки</div>
+    <div class="tab">CSS Generator</div>
+
+    <div class="tabContent">
+        <p>Це приклад першої вкладки</p>
+    </div>
+
+    <div class="tabContent">
+        <div class="controls">
+            <div>
+                Верхній лівий:
+                <input type="range" id="rtl" min="0" max="100" value="0" oninput="generate()">
+                <input type="text" id="ttl" value="0">
+            </div>
+
+            <div>
+                Верхній правий:
+                <input type="range" id="rtr" min="0" max="100" value="0" oninput="generate()">
+                <input type="text" id="ttr" value="0">
+            </div>
+
+            <div>
+                Нижній правий:
+                <input type="range" id="rbr" min="0" max="100" value="0" oninput="generate()">
+                <input type="text" id="tbr" value="0">
+            </div>
+
+            <div>
+                Нижній лівий:
+                <input type="range" id="rbl" min="0" max="100" value="0" oninput="generate()">
+                <input type="text" id="tbl" value="0">
+            </div>
+        </div>
+
+        <div id="block"></div>
+
+        <textarea id="cssCode" readonly></textarea>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
